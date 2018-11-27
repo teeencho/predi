@@ -4,7 +4,7 @@
 ?>
 <div class="row">
   <div class="col-lg-6 main">
-    <h1 class="page-header">Edificios</h1>
+    <h1 class="page-header">Territorios</h1>
     <?= $this->Html->link('Nuevo', ['action' => 'agregar'], ['class' => 'btn btn-primary']) ?>
   </div>
   <div class="col-lg-6">
@@ -22,13 +22,13 @@
   <div class="col-md-12">
     <table class="table table-striped table-condensed">
       <tr><th><?php echo $this->Paginator->sort('territorio');?></th><th><?php echo $this->Paginator->sort('manzana');?></th><th>Dirección</th><th>Acciones</th></tr>
-      <?php foreach ($edificios as $edi): ?>
+      <?php foreach ($territorios as $terri): ?>
         <tr>
-          <td class="col-md-1"><?= strtoupper(h($edi->territorio)) ?></td>
-          <td class="col-md-1"><?= strtoupper(h($edi->manzana)) ?></td>
-          <td class="col-md-3"><?= h($edi->calle . ' ' . $edi->altura) ?></td>
-          <td class="col-md-2"><?= $this->Html->link('Editar', ['action' => 'editar', $edi->id], ['class' => 'btn btn-md btn-xs btn-info']) ?>
-          <?= $this->Html->link('Eliminar', ['action' => 'eliminar', $edi->id], ['confirm'=>'¿Seguro que desea eliminar el edificio?', 'class' => 'btn btn-md btn-xs btn-danger']) ?></td>
+          <td class="col-md-1"><?= strtoupper(h($terri->territorio)) ?></td>
+          <td class="col-md-1"><?= strtoupper(h($terri->manzana)) ?></td>
+          <td class="col-md-3"><?= h($terri->calle) ?></td>
+          <td class="col-md-2"><?= $this->Html->link('Editar', ['action' => 'editar', $terri->id], ['class' => 'btn btn-md btn-xs btn-info']) ?>
+          <?= $this->Html->link('Eliminar', ['action' => 'eliminar', $terri->id], ['confirm'=>'¿Seguro que desea eliminar el territorio?', 'class' => 'btn btn-md btn-xs btn-danger']) ?></td>
         </tr>
       <?php endforeach; ?>
     </table>
